@@ -3,33 +3,49 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() { //function compenent
+  //Jsx : {}
+  //Javascript kodları burada yazılır.
+  let a = 15;
+  const firstName = "Alp";
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  let vize1 = 64;
+  let vize2 = 87;
+
+  let sonuc = true;
+
+  let isimler = [
+    "Fatma",
+    "Alp",
+    "Nur",
+    "Dilek"
+  ]
+
+  return ( 
+    //retun içinde HTML içeriği
+    <div>
+      {/* Developer Ftma */}
+      <p>a değişkeninin değeri : {a}</p>
+      <p>Müşterinin adı: {firstName}</p>
+      <p>Ortalama : {(vize1 + vize2)/2}</p>
+
+      {
+        (vize1 + vize2)/2 >=50 ? <p>Dersten geçtin, tebrikler</p> : <p>Kaldın, geçmiş olsun</p>
+      }
+      
+      {sonuc ?  <p>Ehliyetini alabilirsin</p> : <p>Ehliyetini alamazsın, kaybol</p>}
+
+      {
+        isimler.map((isim, index)=> ( 
+          <div style={{ //*ilk parantez jsx; ikinci parantez ise css parantezidir.
+            backgroundColor: 'orange',
+            border: '1px solid black'
+          }} key={index}>{isim}</div>
+        ))
+      }
+
+    </div>
   )
 }
 
-export default App
+export default App //App compenenti dışarı export edilir.
